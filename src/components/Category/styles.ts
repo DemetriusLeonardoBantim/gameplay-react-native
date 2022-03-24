@@ -15,14 +15,14 @@ export const styles = StyleSheet.create({
     height: 116,
     borderRadius: 8,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent:'space-around',
     paddingVertical: 20
   },
   title: {
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
     fontSize: 15,
-    marginTop: 15
+    marginTop: 19
   },
   check: {
     position: 'absolute',
@@ -43,5 +43,5 @@ export const styles = StyleSheet.create({
     height: 10,
     backgroundColor: theme.colors.primary,
     borderRadius: 3
-  }
+  },
 });

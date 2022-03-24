@@ -1,6 +1,5 @@
 import React from 'react'
-import {RectButton,RectButtonProps} from 'react-native-gesture-handler'
-import {View,Text} from 'react-native'
+import {View,Text,TouchableOpacity,TouchableOpacityProps} from 'react-native'
 import PlayerSvg from '../../assets/player.svg'
 import CalendarSvg from '../../assets/calendar'
 import { styles } from './style'
@@ -23,7 +22,7 @@ export type AppointmentProps = {
   description:string
 }
 
-type Props = RectButtonProps & {
+type Props = TouchableOpacityProps & {
   data: AppointmentProps
 }
 
@@ -34,7 +33,7 @@ export function Appointment({data, ...rest} : Props){
 
 
   return(
-    <RectButton {...rest}>
+    <TouchableOpacity {...rest}>
       <View style={styles.container}>
         <GuildIcon />
         <View style={styles.content}>
@@ -68,6 +67,6 @@ export function Appointment({data, ...rest} : Props){
           </View>
         </View>
       </View>
-    </RectButton>
+    </TouchableOpacity>
   )
 }

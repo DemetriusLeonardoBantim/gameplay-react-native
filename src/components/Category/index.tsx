@@ -1,27 +1,29 @@
 import React from 'react'
 import {View,Text} from 'react-native'
-import {RectButton, RectButtonProps} from 'react-native-gesture-handler'
+import {TouchableOpacityProps, TouchableOpacity} from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
 import { SvgProps } from 'react-native-svg'
 import { theme } from '../../global/styles/theme'
 import { styles } from './styles'
 
 
-type Props = RectButtonProps & {
+type Props = TouchableOpacityProps & {
   title: string;
   icon: React.FC<SvgProps>;
   checked?: boolean;
+  hasCheckBox?: boolean;
 }
 
 export function Category({title,
   icon:Icon, 
   checked = false,
+  hasCheckBox = false,
   ...rest
 }:  Props){
   const { secondary40, secondary50, secondary70, secondary85 } = theme.colors;
   
   return(
-    <RectButton {...rest}>
+    <TouchableOpacity {...rest}>
       <LinearGradient
         style={styles.container}
         colors={[secondary50, secondary70]}
@@ -30,10 +32,14 @@ export function Category({title,
           style={[styles.content, { opacity: checked ? 1 : 0.5 }]}
           colors={[ checked ? secondary85 : secondary50, secondary40 ]}
         >
-
+          
+          {
+            hasCheckBox &&            
             <View style={
               checked ? styles.checked : styles.check
             }/>
+          }
+
 
           <Icon 
               width={48} 
@@ -45,6 +51,6 @@ export function Category({title,
           </Text>
         </LinearGradient>
       </LinearGradient>
-    </RectButton>
+    </TouchableOpacity>
   )
 }

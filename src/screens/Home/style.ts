@@ -11,12 +11,13 @@ export const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-between',
     marginTop:getStatusBarHeight() + 26,
+    marginBottom:30
   },
   content:{
     marginTop:42,
   },
   matches:{
-    marginTop:24,
+    marginTop:30,
     marginLeft:24
   }
 })
